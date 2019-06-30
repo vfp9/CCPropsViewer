@@ -73,14 +73,19 @@ VFP 可以设置游标和连接的属性默认值 - 0 。
 
 ## 5) 文件列表
 proper.vcx,proper.vct - 必需的可是类库
+
 cur_prop.h - 可视类库使用的头文件
+
 readme.md - 本文件
 
 
 目录 example:
  XXD000.DBC,XXD000.DCT,XXD000.DCX - VFP数据库，包含DBF的链接，与MDB的连接，一个本地和和一个远程视图
+ 
  XXD000.MDB - MDB 文件
+ 
  XXT000.DBF - 数据库表
+ 
  test.prg - 测试程序
 
 
