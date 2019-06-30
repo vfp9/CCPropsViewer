@@ -1,6 +1,6 @@
 # 游标和连接属性查看器
 
-翻译：xinjie  2019.06.30
+翻译：xinjie    2019.06.30
 
 **本类库用于显示和设置游标和连接的属性。**
 
@@ -32,25 +32,25 @@
 ```foxpro
 SET CLASSLIB TO proper.vcx ADDITIVE
 xx=CREATEOBJECT("_prop_cursor")
-xx.Set(ALIAS()) && show properties for current alias (string)
-xx.Set(SELE()) && show properties for current alias (number)
-xx.Set(0) && show properties for zero alias
+xx.Set(ALIAS()) && 显示当前游标的属性 (字符串)
+xx.Set(SELE()) && 显示当前游标的属性 (数值)
+xx.Set(0) && 显示所有游标的默认属性
 ```
 
 连接属性：
 ```foxpro
 SET CLASSLIB TO proper.vcx ADDITIVE
 xx=CREATEOBJECT("_prop_connect")
-xx.Set(1) && show properties for connection with handle 1
-xx.Set(0) && show properties for zero connection 
+xx.Set(1) && 显示连接句柄为 1 的连接属性
+xx.Set(0) && 显示连接的默认属性 
 ```
 
 运行模式对话框：
 ```foxpro
 SET CLASSLIB TO proper.vcx ADDITIVE
 xx=CREATEOBJECT("_prop_connect")
-xx.Show=1 && modal dialog (2 is modeless)
-xx.Set(0) && show properties for zero connection 
+xx.Show=1 && 模式表单
+xx.Set(0) && 显示连接的默认属性 
 ```
 
 运行顶层表单对话框：
@@ -58,33 +58,32 @@ xx.Set(0) && show properties for zero connection
 SET CLASSLIB TO proper.vcx ADDITIVE
 xx=CREATEOBJECT("_prop_connect")
 xx.AsTopLevel=.T.
-xx.Set(0) && show properties for zero connection 
+xx.Set(0) && 显示连接的默认属性 
 ```
 
-## 3) Zero connection and zero cursor
-VFP can set properties for default cursor and connection - 0 (zero).
- VFP use these properties for new connections and cursors created by local view, remote view, `SQLEXEC()` and CursorAdapter.
+## 3) 连接和游标的默认设置
+VFP 可以设置游标和连接的属性默认值 - 0 。
+ VFP将这些属性用于由本地视图，远程视图，`SQLEXEC（）和 CursorAdapter 创建的新连接和游标。
 
 
-## 4) Example
- The exmaple is in folder example, file test.prg.
- The file contain sample for openned table, local view, remote view a cursor created by CursorAdapter.
+## 4) 示例
+ 示例文件可以通过执行 example 目录下的 test.prg 进行查看。
+ 示例文件包含打开表、本地视图、远程视图和 CursorAdapter 的应用。
 
 
-## 5) File list
-proper.vcx,proper.vct - Visual library with needed class definition
-cur_prop.h - Header file with needed any constants for internaly using
-readme.md - Read me
+## 5) 文件列表
+proper.vcx,proper.vct - 必需的可是类库
+cur_prop.h - 可视类库使用的头文件
+readme.md - 本文件
 
 
-folder example:
- XXD000.DBC,XXD000.DCT,XXD000.DCX - VFP database contain a link to DBF, connection to MDB, one local and remote view
- XXD000.MDB - Any MDB file with one table
- XXT000.DBF - Table linked to XXD001.DBC
- test.prg - Source code
+目录 example:
+ XXD000.DBC,XXD000.DCT,XXD000.DCX - VFP数据库，包含DBF的链接，与MDB的连接，一个本地和和一个远程视图
+ XXD000.MDB - MDB 文件
+ XXT000.DBF - 数据库表
+ test.prg - 测试程序
 
 
-## 6) Problems
-This library is compiled under VFP 7.0. For other version is needly recompile before using.
-
+## 6) 已知问题
+该库是在VFP 7.0下编译的。 其他版本在使用前需要重新编译。
 
