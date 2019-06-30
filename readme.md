@@ -1,32 +1,34 @@
-# Cursor and Connector Properties Viewer
+# 游标和连接属性查看器
 
-**This library is for displaying and setting cursors a connect properties.**
+翻译：xinjie  2019.06.30
+
+**本类库用于显示和设置游标和连接的属性。**
 
 **Bugs: **
-- Any bug under VFP 9.0
+- 修复 VFP9 下的所有错误
 
 **New:**
-- Suport for AsTopLevel form
+- 支持顶层表单
 
-1) Dialog description
-2) Using
-3) Zero connection and zero cursor
-4) Example
-5) File list
-6) Problems
+1) 对话框描述
+2) 使用方法
+3) 连接和游标的默认设置
+4) 示例
+5) 文件列表
+6) 已知问题
 
-## 1) Dialog description
-Button "Refresh" reload values.
-Button "Options" call form for setting autorefresh interval (ms). If value is 0, then autorefresh don't call.
-Button "Set properties" save changed value.
-Button "OK" close form.
+## 1) 对话框描述
+按钮“刷新”重新加载值。
+按钮“选项”调用表单，用于设置自动刷新间隔（ms）。 如果value为0，则不调用autorefresh。
+按钮“设置属性”保存更改的值。
+按钮“确定”关闭表单。
 
-Other controls with gray backcolor are read-only.
-Other controls with green backcolor are properties which you can set on for zero connaction or cursor.
+具有灰色背景色的控件所对应的属性是只读的。
+具有绿色背景颜色的控件对应的属性是可以作为连接和游标的默认设置。
 
 
-## 2) Using
-Cursor Properties:
+## 2) 使用方法
+游标属性：
 ```foxpro
 SET CLASSLIB TO proper.vcx ADDITIVE
 xx=CREATEOBJECT("_prop_cursor")
@@ -35,7 +37,7 @@ xx.Set(SELE()) && show properties for current alias (number)
 xx.Set(0) && show properties for zero alias
 ```
 
-Connect Properties:
+连接属性：
 ```foxpro
 SET CLASSLIB TO proper.vcx ADDITIVE
 xx=CREATEOBJECT("_prop_connect")
@@ -43,7 +45,7 @@ xx.Set(1) && show properties for connection with handle 1
 xx.Set(0) && show properties for zero connection 
 ```
 
-Running modal dialog:
+运行模式对话框：
 ```foxpro
 SET CLASSLIB TO proper.vcx ADDITIVE
 xx=CREATEOBJECT("_prop_connect")
@@ -51,7 +53,7 @@ xx.Show=1 && modal dialog (2 is modeless)
 xx.Set(0) && show properties for zero connection 
 ```
 
-Running dialog "As Top Level":
+运行顶层表单对话框：
 ```foxpro
 SET CLASSLIB TO proper.vcx ADDITIVE
 xx=CREATEOBJECT("_prop_connect")
