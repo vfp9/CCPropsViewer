@@ -63,11 +63,13 @@ xx.Set(0) && 显示连接的默认属性
 
 ## 3) 连接和游标的默认设置
 VFP 可以设置游标和连接的属性默认值 - 0 。
+
  VFP将这些属性用于由本地视图，远程视图，`SQLEXEC（）和 CursorAdapter 创建的新连接和游标。
 
 
 ## 4) 示例
  示例文件可以通过执行 example 目录下的 test.prg 进行查看。
+ 
  示例文件包含打开表、本地视图、远程视图和 CursorAdapter 的应用。
 
 
@@ -80,6 +82,7 @@ readme.md - 本文件
 
 
 目录 example:
+
  XXD000.DBC,XXD000.DCT,XXD000.DCX - VFP数据库，包含DBF的链接，与MDB的连接，一个本地和和一个远程视图
  
  XXD000.MDB - MDB 文件
